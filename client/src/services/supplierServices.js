@@ -1,0 +1,11 @@
+import api from './api'
+
+export const supplierService = {
+  getAll: () => api.get('/suppliers'),
+  getById: (id) => api.get(`/suppliers/${id}`),
+  create: (data) => api.post('/suppliers', data),
+  update: (id, data) => api.put(`/suppliers/${id}`, data),
+  delete: (id) => api.delete(`/suppliers/${id}`),
+  uploadCSV: (data) => api.post('/suppliers/upload-csv', { data }),
+  getRisk: (id) => api.get(`/suppliers/${id}/risk`),
+}
